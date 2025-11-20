@@ -1,0 +1,201 @@
+/* === GOOGLE FONTS === */
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap');
+
+/* === RESET STYLES === */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+input,
+button,
+textarea {
+    font: inherit;
+}
+
+/* === VARIABLES === */
+:root {
+  /* Typography */
+    --font-main: 'Merriweather', serif;
+    --font-size-base: clamp(1rem, 2.2vh, 1.5rem);
+
+  /* Row background colors */
+    --row-read-start: #4caf50;
+    --row-read-end: #d0f8c0;
+    --row-inprogress-start: #ff9800;
+    --row-inprogress-end: #ffe0b2;
+    --row-toread-start: #607d8b;
+    --row-toread-end: #cfd8dc;
+
+  /* Status badge colors */
+    --status-read-start: #2e7d32;
+    --status-read-end: #a5d6a7;
+    --status-inprogress-start: #f57c00;
+    --status-inprogress-end: #ffcc80;
+    --status-toread-start: #d32f2f;
+    --status-toread-end: #ef9a9a;
+
+  /* Ratings */
+    --rating-gradient: linear-gradient(60deg, #ffd700, #ffec3d, #ffe680);
+
+  /* Borders */
+    --border-read: 2px solid var(--status-read-start);
+    --border-inprogress: 2px solid var(--status-inprogress-start);
+    --border-toread: 2px solid var(--status-toread-start);
+
+  /* Misc */
+    --color-font: #222;
+    --radius-badge: 0.8em;
+}
+
+/* === UTILITY CLASSES === */
+.hidden {
+    position: absolute;
+    left: -9999px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.nowrap {
+    white-space: nowrap;
+}
+
+/* === BASE STYLES === */
+html {
+    font-family: var(--font-main);
+    font-size: var(--font-size-base);
+    background-color: #f9f9f9;
+    color: var(--color-font);
+}
+
+body {
+    min-height: 100vh;
+    padding: 1.5rem;
+}
+
+span {
+    display: inline-block;
+}
+
+p {
+    line-height: 1.6;
+}
+
+/* === TABLE STYLES === */
+h1 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-weight: 700;
+    color: #37474f;
+}
+
+table {
+    margin: 0 auto;
+    border-collapse: collapse;
+    text-align: center;
+    padding: 1rem;
+    width: 90%;
+    max-width: 900px;
+}
+
+th,
+td {
+    padding: 0.75rem 1rem;
+}
+
+th {
+    font-size: 1.25rem;
+    background-image: linear-gradient(to bottom, #1976d2, #64b5f6);
+    color: #fff;
+}
+
+/* === ROW BACKGROUNDS === */
+tr[class="read"] {
+    background-image: linear-gradient(to right, var(--row-read-start), var(--row-read-end));
+}
+
+tr[class="in-progress"] {
+    background-image: linear-gradient(to right, var(--row-inprogress-start), var(--row-inprogress-end));
+}
+
+tr[class="to-read"] {
+    background-image: linear-gradient(to right, var(--row-toread-start), var(--row-toread-end));
+}
+
+/* === STATUS BADGES === */
+tr[class="read"] span[class="status"] {
+    border: var(--border-read);
+    background-image: linear-gradient(to right, var(--status-read-start), var(--status-read-end));
+    border-radius: var(--radius-badge);
+    font-weight: 600;
+    color: #fff;
+    padding: 5px 0;
+}
+
+tr[class="in-progress"] span[class="status"] {
+    border: var(--border-inprogress);
+    background-image: linear-gradient(to right, var(--status-inprogress-start), var(--status-inprogress-end));
+    border-radius: var(--radius-badge);
+    font-weight: 600;
+    color: #fff;
+    padding: 5px 0;
+}
+
+tr[class="to-read"] span[class="status"] {
+    border: var(--border-toread);
+    background-image: linear-gradient(to right, var(--status-toread-start), var(--status-toread-end));
+    border-radius: var(--radius-badge);
+    font-weight: 600;
+    color: #fff;
+    padding: 5px 0;
+}
+
+/* === RATINGS === */
+span[class="status"],
+span[class^="rate"] {
+    width: 150px;
+    height: 40px;
+    padding: 5px;
+}
+
+span[class^="rate"] {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+span[class^="rate"] > span {
+    width: 20px;
+    height: 20px;
+    margin: 0 5px;
+    border: 2px solid #333;
+    border-radius: 50%;
+    background-color: #e0e0e0;
+}
+
+/* One star */
+span[class~="one"] > span:first-child {
+    background-image: linear-gradient(45deg, #ffd700, #ffeb3b);
+}
+
+/* Two stars */
+span[class~="two"] > span:first-child,
+span[class~="two"] > span:nth-child(2) {
+    background-image: linear-gradient(45deg, #ffd700, #ffeb3b);
+}
+
+/* Three stars */
+span[class~="three"] > span {
+    background-image: linear-gradient(45deg, #ffd700, #ffeb3b);
+}
