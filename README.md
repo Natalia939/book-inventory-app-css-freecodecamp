@@ -30,12 +30,12 @@ This project demonstrates semantic HTML, advanced CSS selectors, responsive desi
 🚀 How to Run:
   1. Clone the repository:  
      ```bash
-     git clone https://github.com/your-username/book-inventory-app-css-freecodecamp.git
+     git clone https://github.com/Natalia939/book-inventory-app-css-freecodecamp.git
      ```
   2. Navigate to the project folder:  
      ```bash
      cd book-inventory-app-css-freecodecamp
      ```
   3. Open `index.html` in your browser
-- 👩‍💻 Author: **Nataliia Gvozdovska – Web Developer & Designer**
+- 👩‍💻 Author: **Natalia Gvozdovska – Web Developer & Designer**
 - Created on: November 20, 2025
